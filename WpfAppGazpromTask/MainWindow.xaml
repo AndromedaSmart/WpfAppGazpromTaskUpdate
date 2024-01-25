@@ -42,6 +42,6 @@
             <TextBox Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
 
-        <oxy:PlotView Model="{Binding Path=MyModel}" Grid.Column="1" Margin="0,100,0,0" Grid.RowSpan="2" />
+        <oxy:PlotView Model="{Binding Path=SelectedTypeOfGraph.MyModel}" Grid.Column="1" Margin="0,100,0,0" Grid.RowSpan="2" />
     </Grid>
 </Window>

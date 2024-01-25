@@ -10,17 +10,18 @@ namespace WpfAppGazpromTask
     {
         private string type;
 
-        // private PlotModel myModel;
-        /* public PlotModel MyModel
+        //private PlotModel myModel;
+        public PlotModel MyModel
         {
-            get { return MyModel; }
-            private set
-            {
-                this.MyModel = new PlotModel { Title = "Sinusoid function" };
-                this.MyModel.Series.Add(new FunctionSeries(Math.Sin, 0, 10, 0.1, "sin(x)"));
-            }
-        }*/
-
+            get;
+            private set;
+        }
+        public Graph(string type, Func<double, double> formula) 
+        { 
+            this.type = type;
+            this.MyModel = new PlotModel { };
+            this.MyModel.Series.Add(new FunctionSeries(formula, 0, 10, 0.1));
+        }
         public string Type
         {
             get { return type; }

@@ -11,7 +11,7 @@ namespace WpfAppGazpromTask
     {
         private Graph selectedTypeOfGraph;
 
-        public PlotModel MyModel { get; private set; }
+        // public PlotModel MyModel { get; private set; }
 
         public ObservableCollection<Graph> TypesOfGraphs { get; set; }
         public Graph SelectedTypeOfGraph
@@ -28,14 +28,13 @@ namespace WpfAppGazpromTask
         {
             TypesOfGraphs = new ObservableCollection<Graph>
             {
-                new Graph { Type = "Linear function" },
-                new Graph { Type = "Sinusoid function" },
-                new Graph { Type = "hyperbola function" },
-                new Graph { Type = "Point" }
+                new Graph ("Square Root function", Math.Sqrt),
+                new Graph ("Sinusoid function", Math.Sin),
+                new Graph ("Hyperbolic cosine function", Math.Cosh),
             };
 
-            this.MyModel = new PlotModel { Title = "Sinusoid function" };
-            this.MyModel.Series.Add(new FunctionSeries(Math.Sin, 0, 10, 0.1, "sin(x)"));
+            // this.MyModel = new PlotModel { Title = "Sinusoid function" };
+            // this.MyModel.Series.Add(new FunctionSeries(Math.Sin, 0, 10, 0.1, "sin(x)"));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
